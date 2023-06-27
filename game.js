@@ -27,3 +27,24 @@ function playGame(playerSelection, computerSelection){
     }
 }
 
+function game() {
+    let playerSelection = "";
+    let computerSelection = "";
+    let result = "";
+    let Pscore = 0;
+    let Cscore = 0;
+    for(let i = 0; i < 5; i++){
+        playerSelection = prompt("Please enter your choice: ");
+        computerSelection = getComputerChoice();
+        result = playGame(playerSelection, computerSelection);
+        console.log(result);
+        if(result.includes("Win")){
+            Pscore++;
+        }
+        if(result.includes("Lose")){
+            Cscore++;
+        }
+        console.log("Player: " + Pscore);
+        console.log("Computer: " + Cscore);
+    }
+}
